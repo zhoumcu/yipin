@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/setting_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shopping_message"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|left"
+            android:clickable="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@drawable/icon_message" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@color/tar_title_color"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/shopping_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:clickable="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@drawable/shopping_setting" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <!--一整个Linearlayout-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="268dp"
+                android:background="@drawable/m_common_bg"
+                android:orientation="vertical">
+                <!--个人信息卡片-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="201dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="17dp"
+                    android:paddingTop="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/profile_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shopping_person_card_bg">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/profile"
+                            android:layout_width="53dp"
+                            android:layout_height="53dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="21dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/profile_default"
+                            android:clickable="true"
+                            fresco:roundAsCircle="true"
+                            fresco:roundingBorderColor="#ffffff"
+                            fresco:roundingBorderWidth="2dp" />
+
+                        <TextView
+                            android:id="@+id/username_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="29dp"
+                            android:layout_marginTop="20dp"
+                            android:text="kuyue"
+                            android:textColor="@color/shopping_person_pink_color"
+                            android:textSize="13dp" />
+                        <!--未登录时-->
+                        <LinearLayout
+                            android:id="@+id/login_logout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="22dp"
+                            android:layout_marginRight="27dp"
+                            android:gravity="right"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <Button
+                                android:id="@+id/btn_login"
+                                android:layout_width="80dp"
+                                android:layout_height="29dp"
+                                android:layout_marginRight="27dp"
+                                android:background="@drawable/login_out_btn_selector"
+                                android:gravity="center"
+                                android:text="登录"
+                                android:textColor="@drawable/login_out_btn_textcolor_selector"
+                                android:textSize="13dp" />
+
+                            <Button
+                                android:id="@+id/btn_register"
+                                android:layout_width="80dp"
+                                android:layout_height="29dp"
+                                android:background="@drawable/login_out_btn_selector"
+                                android:gravity="center"
+                                android:text="注册"
+                                android:textColor="@drawable/login_out_btn_textcolor_selector"
+                                android:textSize="13dp" />
+                        </LinearLayout>
+                        <!--已登录时-->
+                        <LinearLayout
+                            android:id="@+id/credit_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="27dp"
+                            android:layout_marginRight="29dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:gravity="right"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/mf_maxbalance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="￥0.00"
+                                    android:textColor="#f9abca"
+                                    android:textSize="13dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="总额度"
+                                    android:textColor="#f9abca"
+                                    android:textSize="10dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#e5e5e5" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:gravity="right"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/mf_balance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="￥0.00"
+                                    android:textColor="#3b3e40"
+                                    android:textSize="13dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="可用额度"
+                                    android:textColor="#3b3e40"
+                                    android:textSize="10dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                <!--获取信用额度-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="67dp"
+                    android:background="@drawable/shopping_getcreditscore_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="13dp">
+
+                    <Button
+                        android:id="@+id/dlf_view"
+                        android:layout_width="336dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/btn_get_credit_score_shape"
+                        android:text="提升信用额度"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--我的订单-->
+            <LinearLayout
+                android:id="@+id/my_order_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_order" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="我的订单"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--分隔线-->
+            <!--我的购物车-->
+            <LinearLayout
+                android:id="@+id/my_shoppingCart_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_cart" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="我的购物车"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--分隔线-->
+            <!--我的优惠券-->
+            <LinearLayout
+                android:id="@+id/my_coupon_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_coupon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="我的优惠券"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--分隔线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--旅游订单-->
+            <LinearLayout
+                android:id="@+id/tour_order"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_order" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="旅游订单"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--华丽的分割线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--还款-->
+            <LinearLayout
+                android:id="@+id/payment_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/setting_item_view"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_repayment" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="我的还款"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--华丽的分割线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tour_payment_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_repayment" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="旅游还款"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--华丽的分割线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--钱包-->
+            <LinearLayout
+                android:id="@+id/wallet_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_wallet" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="我的钱包"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+
+            <!--消息中心-->
+            <LinearLayout
+                android:id="@+id/push_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_messagecenter" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="消息中心"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--华丽的分割线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--优惠券-->
+            <LinearLayout
+                android:id="@+id/ll_coupon"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_coupon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="优惠券"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_get_coupon"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_coupon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="领取优惠券"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--华丽的分割线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--合并之后的白兔计划-->
+            <LinearLayout
+                android:id="@+id/ll_white_rabbit_pay"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/whiterabbit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:text="白兔计划"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/icon_fire" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="(一起赚钱)"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--华丽的分割线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--邀请好友-->
+            <LinearLayout
+                android:id="@+id/invite_friends_view"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_invaterfriends" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="邀请好友"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--分隔线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--加入白兔计划-->
+            <LinearLayout
+                android:id="@+id/ll_join"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_order" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="加入白兔计划"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+            <!--分隔线-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/setting_color" />
+            </LinearLayout>
+            <!--白条计划-->
+            <LinearLayout
+                android:id="@+id/ll_wb_pay"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/setting_item_view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_order" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="白兔计划"
+                    android:textColor="@color/shopping_person_text_color"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping_goto_arrow" />
+            </LinearLayout>
+
+            <!--退出按钮-->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/loggout_btn"
+                    android:layout_width="336dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/exit_btn_selector"
+                    android:text="退出"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

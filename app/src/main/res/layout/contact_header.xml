@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_head"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:background="@color/bind_card_bg"
+    android:gravity="center_vertical"
+    android:paddingLeft="14dp"
+    android:textColor="@color/m_black_color"
+    android:textSize="13dp"
+    tools:text="A" />

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/scroll_backgroud_gray3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_marginBottom="50dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_empty_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/rectangle_white_pressed"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/next"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/common_dp12"
+                    android:text="请先设置默认收货地址"
+                    android:textColor="@color/m_pink_color"
+                    android:textSize="15dp"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/item_consignee_address_order_confirmation"></include>
+
+                <include layout="@layout/item_person_address_order_confirmation"></include>
+
+
+
+
+
+                <!--固定死了高度，目前只有一项-->
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp"
+                    android:layout_marginLeft="12dp"
+                    android:gravity="center_vertical"
+                    android:text="付款方式"
+                    android:visibility="gone"
+                    style="@style/tv_c7c7c7_13"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_pay_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+                    <!--分期支付-->
+                    <LinearLayout
+                        style="@style/my_linearLayout_order_confirmation"
+                        android:id="@+id/ll_fenqi">
+
+                        <TextView
+                            style="@style/tv_6b7175_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="12dp"
+                            android:text="分期支付" />
+                        <TextView
+                            android:id="@+id/tv_fenqi_num"
+                            style="@style/tv_6b7175_13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="()" />
+
+                        <CheckBox
+                            android:id="@+id/cb_fenqi_pay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/cb_order_confirmation"
+                            />
+
+                    </LinearLayout>
+                    <!--分隔线-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="#e5e5e5" />
+                    <!--全额支付-->
+                    <LinearLayout
+                        style="@style/my_linearLayout_order_confirmation"
+                        android:id="@+id/ll_allpqy">
+
+                        <TextView
+                            style="@style/tv_6b7175_13"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="12dp"
+                            android:text="全额支付" />
+
+                        <CheckBox
+                            android:id="@+id/cb_allpay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/cb_order_confirmation"/>
+
+                    </LinearLayout>
+                    <!--分隔线-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="#e5e5e5" />
+                </LinearLayout>
+
+
+
+                <include
+                    layout="@layout/rcv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+
+                    android:layout_marginTop="10dp"></include>
+
+                <LinearLayout
+                    android:id="@+id/order_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#e5e5e5" />
+            <!--买家留言-->
+            <LinearLayout
+                style="@style/my_linearLayout_order_confirmation"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="买家留言"
+                    android:layout_marginRight="@dimen/common_padding10"
+                    style="@style/tv_6b7175_13"/>
+
+                <EditText
+                    android:id="@+id/et_buyer_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="可填写您与卖家达成一致的要求"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    android:padding="2dp"
+                    style="@style/edittext_black_gray2_13"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#e5e5e5" />
+            <!--配送方式-->
+            <LinearLayout style="@style/my_linearLayout_order_confirmation">
+
+                <TextView
+                    style="@style/tv_6b7175_13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="配送方式" />
+
+                <TextView
+                    style="@style/tv_6b7175_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="快递" />
+
+                <TextView
+                    android:id="@+id/tv_baoyou"
+                    style="@style/tv_6b7175_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="包邮" />
+
+            </LinearLayout>
+            <!--暂时没有该功能-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--分隔线-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e5e5e5"/>
+
+                <!--分隔线-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="#e5e5e5"
+                    android:visibility="gone"/>
+                <LinearLayout
+                    style="@style/my_linearLayout_order_confirmation"
+                    android:visibility="gone">
+                    <TextView
+                        style="@style/tv_c7c7c7_13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="20元优惠券" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="#e5e5e5"
+                    />
+                <!--积分-->
+                <LinearLayout
+                    style="@style/my_linearLayout_order_confirmation"
+                    android:id="@+id/ll_score"
+                    android:clickable="true"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_score"
+                        style="@style/tv_6b7175_13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:text="0个白兔币" />
+                    <TextView
+                        android:id="@+id/tv_score_yuan"
+                        style="@style/tv_6b7175_13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="(本次可抵扣0元)" />
+
+                    <CheckBox
+                        android:id="@+id/cb_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/cb_order_confirmation"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--付款方式-->
+
+
+
+            <!--白色背景-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"/>
+            <!--底部提交-->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/bottom_order_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true" />
+
+
+
+</RelativeLayout>

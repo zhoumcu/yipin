@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/ll_backgroud_gray3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:paddingTop="@dimen/common_padding5"
+        android:paddingLeft="@dimen/common_padding10">
+
+        <TextView
+            style="@style/tv_black_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_goods_name_order_pay"/>
+
+        <TextView
+            android:id="@+id/tv_goods_name_order_pay"
+            style="@style/tv_black_13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:paddingLeft="@dimen/common_padding10"
+        android:paddingBottom="@dimen/common_padding5"
+        android:paddingTop="@dimen/common_padding5"
+        >
+
+        <TextView
+            style="@style/tv_black_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_goods_price_order_pay"/>
+
+        <TextView
+            android:id="@+id/tv_goods_price_order_pay"
+            style="@style/tv_red_13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:paddingLeft="@dimen/common_padding10"
+        android:paddingBottom="@dimen/common_padding5"
+        >
+
+        <TextView
+            style="@style/tv_black_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_goods_number_order_pay"/>
+
+        <TextView
+            android:id="@+id/tv_goods_number_order_pay"
+            style="@style/tv_red_13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/tv_black_15"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/common_padding5"
+        android:background="@color/common_white"
+        android:gravity="center_vertical"
+        android:padding="@dimen/common_padding10"
+        android:text="支付方式："
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_fenqi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/common_padding5"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_monthpay"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_mothpay1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="12dp"
+                android:text="分期付款"
+                android:textColor="#3b3e40"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/tv_monthpay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_mothpay1"
+                android:text="（首付0元）"
+                android:textColor="#EB91B4"
+                android:textSize="15dp" />
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_mothpay"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="@dimen/common_dp12"-->
+            <!--android:src="@drawable/personinfo_down"-->
+            <!--/>-->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/priod_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_monthpay"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"/>
+
+        <LinearLayout
+            android:id="@+id/priod_second_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/priod_view"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/common_white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/common_padding20"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/common_padding10"
+            android:background="@drawable/ic_zfb"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_black_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="支付宝支付"/>
+
+            <TextView
+                style="@style/tv_gray_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="推荐有支付宝的用户使用"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/rb_aliPay_order_pay"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/common_padding10"
+            android:background="@drawable/rb_address_seletor_purplish_blue"
+            android:button="@null"
+            android:checked="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/common_white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/common_padding20"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/common_padding10"
+            android:background="@drawable/ic_wx"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_black_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="微信支付"/>
+
+            <TextView
+                style="@style/tv_gray_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="推荐安装微信5.0及以上版本使用"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/rb_weixin_order_pay"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/common_padding10"
+            android:background="@drawable/rb_address_seletor_purplish_blue"
+            android:button="@null"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_confirmation_pay_order_pay"
+        style="@style/tv_white_15"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/common_padding10"
+        android:background="@drawable/rectangle_radius_purplish_blue_20_pressed"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="确认支付"/>
+</LinearLayout>

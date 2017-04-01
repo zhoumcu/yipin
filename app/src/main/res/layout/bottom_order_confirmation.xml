@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical"
+    style="@style/ll_backgroud_white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#e5e5e5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_pay_type"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="首付："
+            android:gravity="right|center_vertical"
+            android:textSize="13dp"
+            android:textColor="#3b3e40"
+            />
+
+        <TextView
+            android:id="@+id/tv_money_order_confirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="@dimen/common_padding12"
+            android:textColor="@color/shopping_person_pink_color"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/tv_pay_order_confirmation"
+            android:layout_width="114dp"
+            android:clickable="true"
+            android:layout_height="match_parent"
+            android:text="提交订单"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:background="@drawable/rectangle_pink_pressed_selector"
+            style="@style/tv_white_13"/>
+    </LinearLayout>
+
+</LinearLayout>

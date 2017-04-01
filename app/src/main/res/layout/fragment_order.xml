@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bind_card_bg"
+    android:orientation="vertical">
+
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/rcv_category_order"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:scrollbars="none" />-->
+
+    <RadioGroup
+        android:id="@+id/rg_person_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_all_person_order"
+            style="@style/rb_selecor_13"
+            android:text="全部"
+            android:textColor="@drawable/order_radio_text_color_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_waiting_pay_person_order"
+            style="@style/rb_selecor_13"
+            android:text="待付款"
+            android:textColor="@drawable/order_radio_text_color_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_waiting_send_out_person_order"
+            style="@style/rb_selecor_13"
+            android:text="待发货"
+            android:textColor="@drawable/order_radio_text_color_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_waiting_receipt_person_order"
+            style="@style/rb_selecor_13"
+            android:text="待收货"
+            android:textColor="@drawable/order_radio_text_color_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_waiting_evaluate_person_order"
+            style="@style/rb_selecor_13"
+            android:text="待评价"
+            android:textColor="@drawable/order_radio_text_color_selector" />
+    </RadioGroup>
+
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/prrcv_goods_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        android:layout_marginLeft="@dimen/common_dp12"
+        android:layout_marginRight="@dimen/common_dp12"
+        />
+    <!-- app:ptrMode="disabled" -->
+
+    <include layout="@layout/empty"></include>
+
+    <include layout="@layout/pb"></include>
+</LinearLayout>

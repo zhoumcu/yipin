@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--通用-->
+    <dimen name="common_dp5">5dip</dimen>
+    <dimen name="common_dp1">1dip</dimen>
+    <dimen name="common_dp2">2dip</dimen>
+    <dimen name="common_dp3">3dip</dimen>
+    <dimen name="common_dp4">4dip</dimen>
+    <dimen name="common_dp6">6dip</dimen>
+    <dimen name="common_dp7">7dip</dimen>
+    <dimen name="common_dp8">8dip</dimen>
+    <dimen name="common_dp9">9dip</dimen>
+    <dimen name="common_dp10">10dip</dimen>
+    <dimen name="common_dp11">11dip</dimen>
+    <dimen name="common_dp12">12dip</dimen>
+    <dimen name="common_dp13">13dip</dimen>
+    <dimen name="common_dp14">14dip</dimen>
+    <dimen name="common_dp15">15dip</dimen>
+    <dimen name="common_dp20">20dip</dimen>
+    <dimen name="common_dp21">21dip</dimen>
+    <dimen name="common_dp22">22dip</dimen>
+    <dimen name="common_dp23">23dip</dimen>
+    <dimen name="common_dp24">24dip</dimen>
+    <dimen name="common_dp25">25dip</dimen>
+    <dimen name="common_dp26">26dip</dimen>
+    <dimen name="common_dp27">27dip</dimen>
+    <dimen name="common_dp28">28dip</dimen>
+    <dimen name="common_dp29">29dip</dimen>
+    <dimen name="common_dp30">30dip</dimen>
+    <dimen name="common_dp33">33dip</dimen>
+    <dimen name="title_height">44dip</dimen>
+    <!--旅游版块-旅游主页的圆角相关-->
+    <dimen name="travel_content_radius">5dp</dimen>
+
+    <!--shopping-->
+    <dimen name="common_padding1">1dp</dimen>
+    <dimen name="common_padding2">2dp</dimen>
+    <dimen name="common_padding3">3dp</dimen>
+    <dimen name="common_padding4">4dp</dimen>
+    <dimen name="common_padding5">5dp</dimen>
+    <dimen name="common_padding7">7dp</dimen>
+    <dimen name="common_padding9">9dp</dimen>
+    <dimen name="common_padding10">10dp</dimen>
+    <dimen name="common_padding12">12dp</dimen>
+    <dimen name="common_padding15">15dp</dimen>
+    <dimen name="common_padding20">20dp</dimen>
+    <dimen name="common_padding25">25dp</dimen>
+    <dimen name="common_padding27">27dp</dimen>
+    <dimen name="common_padding30">30dp</dimen>
+    <dimen name="common_padding40">40dp</dimen>
+    <dimen name="common_padding50">50dp</dimen>
+
+    <!--文字通用大小-->
+    <dimen name="tv_common_size10">10sp</dimen>
+    <dimen name="tv_common_size11">11sp</dimen>
+    <dimen name="tv_common_size12">12sp</dimen>
+    <dimen name="tv_common_size13">13sp</dimen>
+    <dimen name="tv_common_size15">15sp</dimen>
+    <dimen name="tv_common_size16">16sp</dimen>
+    <dimen name="tv_common_size20">20sp</dimen>
+
+    <!--字体大小-->
+    <dimen name="tv_size_13">13sp</dimen>
+    <dimen name="tv_size_15">15sp</dimen>
+
+    <dimen name="line_height_1">1dp</dimen>
+    <dimen name="purchase_bottom">55dp</dimen>
+
+</resources>

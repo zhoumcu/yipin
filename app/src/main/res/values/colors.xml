@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent_background">#99ffffff</color>
+    <color name="GrayLine">#ffdee3ee</color>
+    <color name="blue">#00000000</color>
+    <color name="background">#fff3f4f6</color>
+    <color name="test">#fff3f4f6</color>
+    <color name="f1f3f6">#fff1f3f6</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="grid_back">#ffe1e3e8</color>
+    <color name="grid_text_color">#ff666666</color>
+    <color name="background_tab_pressed">#6633b5e5</color>
+    <color name="holo_blue">#ff33e5b5</color>
+    <color name="new_vancl_home_bg">#ff2e2e2e</color>
+    <color name="new_vancl_home_list_divider1">#ff151515</color>
+    <color name="new_vancl_home_list_divider2">#ff434343</color>
+    <color name="filter_font_color_default">#ffdedede</color>
+    <color name="biaoti_color">#fff6f6f6</color>
+    <color name="color_txt_red">#ffb52221</color>
+    <color name="color_line_red">#ffb52221</color>
+    <color name="color_txt_black">#ff000000</color>
+    <color name="color_txt_black_gry">#ff333333</color>
+    <color name="color_bg_gry">#ffe3e5e8</color>
+    <color name="biaoti_color_txt_press">#ffb61b1f</color>
+    <color name="biaoti_color_txt">#ff000000</color>
+    <color name="group_item_bg">#ffd8d9db</color>
+    <color name="group_item_pressed_bg">#ffe5e5e5</color>
+    <color name="child_item_bg">#ffe5e5e5</color>
+    <color name="child_item_diveder">#ffd6d6d5</color>
+    <color name="list_item_text_pressed_bg">#ffff822e</color>
+    <color name="tab_text_color">#ff787878</color>
+    <color name="tab_text_pressed_color">#ffcd0000</color>
+    <color name="daohang_biaoti">#ff626f6f</color>
+    <color name="red_color">#e8174d</color>
+    <color name="dialog_content_color">#5d5d5d</color>
+    <color name="press_color">#f7f7f7</color>
+    <color name="blue_color">#66c0ff</color>
+    <color name="title_color">#000000</color>
+    <color name="register_edittext_color">#787878</color>
+    <color name="register_edittext_bg_color">#241e21</color>
+    <color name="protocal_text_color">#9f9b9f</color>
+    <color name="text_color">#787577</color>
+    <color name="tab_bg_color">#22211f</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#17e8c8</color>
+    <color name="press_over">#66000000</color>
+    <color name="image_boder_color">#88ffffff</color>
+    <color name="purple_color">#7f17ea</color>
+    <color name="info_item_bg">#1b1b1b</color>
+    <color name="info_bg">#121010</color>
+    <color name="forget_color">#cfcbcd</color>
+    <color name="top_tab_bg_color">#66121010</color>
+    <color name="dynamic_info_bg_color">#12101010</color>
+    <color name="edit_text_color">#929292</color>
+    <color name="divider_color">#848687</color>
+    <color name="notice_bg_color">#e5e5e5</color>
+    <color name="profile_bar_color">#171717</color>
+    <color name="time_color">#646262</color>
+    <color name="des_color">#818181</color>
+    <color name="yellow_color">#e6e817</color>
+    <color name="target_detail_tab_color">#c5c6c9</color>
+    <color name="my_target_text_color">#ced0d2</color>
+    <color name="red_select_color">#a21036</color>
+    <color name="target_detail_list_text_color">#bebfc2</color>
+    <color name="setting_item_sel_color">#151414</color>
+    <color name="setting_item_color">#1c1a1b</color>
+    <color name="bind_card_bg">#f0f0f0</color>
+    <color name="white_normal">#fff</color>
+    <color name="msg_content_color">#6b7175</color>
+    <color name="white_pressed">#f7f7f7</color>
+    <color name="setting_top_bar_color">#8F8B8C</color>
+    <color name="search_text_hint_color">#413F40</color>
+    <color name="choose_text_color">#b4b6b8</color>
+    <color name="info_title_color">#ffccc7</color>
+    <color name="info_edit_text_color">#ff755f</color>
+    <color name="wallet_main_divider_color">#d7c7eb</color>
+    <color name="purchase_text_color">#ececec</color>
+    <color name="purchase_compare_color">#8d8d8d</color>
+    <color name="detail_second_text_color">#a6b8d2</color>
+    <color name="discount_left_line_color">#dfc690</color>
+    <color name="discount_enable_left_line_color">#b5b5b5</color>
+    <color name="discount_amount_text_color">#fcf7e3</color>
+    <color name="discount_amount_enable_text_color">#f1f1f1</color>
+    <color name="discount_enable_date_text_color">#808080</color>
+    <color name="discount_text_eanble_color">#343434</color>
+    <color name="discount_text_color">#403424</color>
+    <color name="change_text_color">#b2c6dc</color>
+    <color name="change_line_color">#5ca5c3</color>
+    <color name="m_blue_color">#768fbd</color>
+    <color name="m_pink_color">#f9adca</color>
+    <color name="m_black_color">#3b3e40</color>
+    <color name="m_divider_color">#c7c7c7</color>
+    <color name="m_purple_color">#684e75</color>
+    <color name="boder_color">#f6e8ed</color>
+    <color name="pur_text_color">#684e75</color>
+    <color name="pur_earn_color">#d7c7ed</color>
+    <color name="setting_bg">#f0f0f0</color>
+    <color name="setting_color">#e5e5e5</color>
+    - <!-- 旅游路线
+  -->
+    <color name="tar_qinglv">#768fbd</color>
+    <color name="tar_chuxingqinglv">#3b3e40</color>
+    <color name="tar_et_hint">#c7c7c7</color>
+    <color name="tar_btn">#6078A5</color>
+    <color name="tar_title_color">#675173</color>
+    <color name="tar_xuxian">#DDDDDDDD</color>
+    <color name="baoxian_btn">#f9adca</color>
+    <!--理财-->
+    <color name="licai_bg">#f0f0f0</color>
+    <color name="licai_button">#ec92b4</color>
+    <!--环信客服-->
+    <color name="common_top_bar_blue">#4ebcd3</color>
+    <color name="btn_login_normal">#007086</color>
+    <color name="btn_login_pressed">#303744</color>
+    <color name="btn_logout_normal">#d33f3f</color>
+    <color name="btn_logout_pressed">#DA5A4D</color>
+    <color name="btn_register_normal">#2dafa3</color>
+    <color name="btn_register_pressed">#4ebcd3</color>
+    <color name="common_bottom_bar_normal_bg">#2d2f31</color>
+    <color name="common_bottom_bar_selected_bg">#161718</color>
+    <color name="common_botton_bar_blue">#2ea7e0</color>
+    <color name="common_bg">#fcfcfc</color>
+    <color name="btn_pressed_green_solid">#B6DA53</color>
+    <color name="divider_list">#cccccc</color>
+    <color name="top_bar_normal_bg">#ED5485</color>
+    <color name="error_item_color">#F6EBE6</color>
+    <color name="bottom_bar_normal_bg">#2D2F31</color>
+    <color name="bottom_text_color_normal">#ffffff</color>
+    <color name="btn_white_normal">#f7f8f8</color>
+    <color name="btn_white_pressed">#b5b5b6</color>
+    <color name="btn_green_noraml">#68C270</color>
+    <color name="btn_green_pressed">#6FCD78</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="btn_gray_pressed_status">#b5b5b6</color>
+    <color name="btn_gray_pressed">#666667</color>
+    <color name="btn_blue_normal">#1e90ff</color>
+    <color name="btn_blue_pressed">#0066FF</color>
+    <color name="orange">#FFA500</color>
+    <color name="gray_pressed">#b5b5b6</color>
+    <color name="gray_normal">#666667</color>
+    <color name="grid_state_pressed">#1Affffff</color>
+    <color name="grid_state_focused">#80000000</color>
+
+    <color name="voip_interface_text_color">#bababa</color>
+    <color name="black_deep">#FF000000</color>
+    <color name="text_selected_color">#ED5485</color>
+    <color name="gray_line">#d1d1d1</color>
+    <!--slibar-->
+    <color name="side_bar_text">#4A4A4A</color>
+    <color name="shadow_bg">#66000000</color>
+    <color name="edit_bg">#EFEFF4</color>
+    <color name="darker_gray">#9b9b9b</color>
+    <!--商品相关-->
+    <!--黑色-->
+    <color name="common_black">#595757</color>
+    <color name="common_black2">#000000</color>
+    <color name="common_transparent_black">#a6000000</color>
+
+    <!--灰色-->
+    <color name="common_gray">#9fa0a0</color>
+    <color name="common_gray2">#c9caca</color>
+    <color name="common_gray3">#efefef</color>
+
+    <!--紫蓝色-->
+    <color name="common_purplish_blue">#4f2bbf</color>
+    <!--红色 -->
+    <color name="common_red">#e60012</color>
+    <!--白色-->
+    <color name="common_white">#ffffff</color>
+    <color name="common_transparent_white">#00ffffff</color>
+    <color name="common_transparent_liter_white">#00ffffff</color>
+
+    <!--线的颜色-->
+    <color name="line_gray">#77898989</color>
+    <color name="half_color">#30000000</color>
+    <!--商品相关-->
+    <color name="shopping_person_pink_color">#f9abca</color>
+    <color name="shopping_person_text_color">#8b8b8b</color>
+
+    <color name="shopping_tab_select">#684f74</color>
+    <color name="white_bg_line">#e5e5e5</color>
+    <color name="light_white_bg_line">#c7c7c7</color>
+
+    <color name="white_bg">#ffffff</color>
+    <color name="light_white_bg">#f0f0f0</color>
+</resources>

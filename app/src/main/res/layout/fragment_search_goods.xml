@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/ll_backgroud_gray3">
+
+    <include layout="@layout/toolbar_search_goods"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding10"
+        android:text="热门搜索"
+        style="@style/tv_black_15"/>
+
+    <cn.zhiao.baselib.custom.MultipleTextViewGroup
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mtvg_hot_search_key"
+        android:padding="@dimen/common_padding10"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        app:textSize="12sp"
+        app:textWordMargin="10dp"
+        app:textLineMargin="10dp"
+        app:textColor="@color/common_gray"
+        app:textBackground="@drawable/frame_gray_8_pressed"
+        app:textPaddingLeft="10dp"
+        app:textPaddingRight="10dp"
+        app:textPaddingTop="5dp"
+        app:textPaddingBottom="5dp"
+        app:overspread="false" />
+    <!--app:textBackground="@color/grey"-->
+
+
+    <TextView
+        android:layout_marginTop="@dimen/common_padding10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding10"
+        android:text="搜索历史"
+        style="@style/tv_black_15"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_histore_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none" />
+
+</LinearLayout>
