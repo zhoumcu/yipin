@@ -607,4 +607,7 @@
     <string name="tv_order_number_logistics">订单编号：%1$s</string>
     <string name="tv_order_state_logistics">状态：%1$s</string>
     <string name="money_us_dollar">￥</string>
+    <string name="tv_goods_edit">编辑</string>
+    <string name="tv_goods_finish">完成</string>
+    <string name="X">X</string>
 </resources>

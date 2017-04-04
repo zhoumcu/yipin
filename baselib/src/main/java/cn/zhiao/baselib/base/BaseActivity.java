@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -26,6 +27,7 @@ public  abstract class BaseActivity extends AppCompatActivity implements IBaseVi
 
     private ProgressDialog mProgressDialog;
     FragmentManager fragmentManager;
+    public Toolbar toolbar;
 
     /**
      * 初始化控件
@@ -303,5 +305,15 @@ public  abstract class BaseActivity extends AppCompatActivity implements IBaseVi
         if(bundle!=null)
             intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    /**
+     * 设置全局toolbar
+     * @param toolbar
+     */
+    public void setToolbar(Toolbar toolbar){
+        if(toolbar!=null){
+            this.toolbar = toolbar;
+        }
     }
 }

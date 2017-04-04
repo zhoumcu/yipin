@@ -323,4 +323,22 @@
     <style name="rl_backgroud_gray3">
         <item name="android:background">@color/common_gray3</item>
     </style>
+
+    <!--产品列表商品名称样式-->
+    <style name="tv_product_list_name">
+        <item name="android:textSize">@dimen/common_dp13</item>
+        <item name="android:textColor">@color/m_black_color</item>
+        <item name="android:layout_marginBottom">7dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
+
+    <style name="tv_3b3e40_15">
+        <item name="android:textSize">@dimen/common_dp15</item>
+        <item name="android:textColor">@color/m_black_color</item>
+    </style>
 </resources>

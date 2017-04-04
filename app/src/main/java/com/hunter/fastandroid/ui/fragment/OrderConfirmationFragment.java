@@ -18,7 +18,8 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hunter.fastandroid.R;
-import cn.zhiao.baselib.base.BaseFragment;
+import com.hunter.fastandroid.dao.GoodDetail;
+import com.hunter.fastandroid.dao.ShoppingCartGoods;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ import java.util.TreeMap;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.zhiao.baselib.base.BaseFragment;
 
 /**
  * 商品清单界面
@@ -154,9 +156,23 @@ public class OrderConfirmationFragment extends BaseFragment implements View.OnCl
         OrderConfirmationFragment fragment = new OrderConfirmationFragment();
         return fragment;
     }
-
-
-    public static void jumpIn(AppCompatActivity ac) {
+    public static void jumpIn(AppCompatActivity ac, String product_id, String s, GoodDetail mGoodDetail, double shoufu, int loanTime) {
+        FragmentManager fragmentmanager = ac.getSupportFragmentManager();
+        Fragment fragment = OrderConfirmationFragment.newInstance();
+        fragmentmanager.beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.container, fragment, OrderConfirmationFragment.TAG)
+                .commitAllowingStateLoss();
+    }
+    public static void jumpIn(AppCompatActivity ac, String product_id, String s) {
+        FragmentManager fragmentmanager = ac.getSupportFragmentManager();
+        Fragment fragment = OrderConfirmationFragment.newInstance();
+        fragmentmanager.beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.container, fragment, OrderConfirmationFragment.TAG)
+                .commitAllowingStateLoss();
+    }
+    public static void jumpIn(AppCompatActivity ac, List<ShoppingCartGoods> list) {
         FragmentManager fragmentmanager = ac.getSupportFragmentManager();
         Fragment fragment = OrderConfirmationFragment.newInstance();
         fragmentmanager.beginTransaction()
@@ -638,4 +654,7 @@ public class OrderConfirmationFragment extends BaseFragment implements View.OnCl
     public void onClick() {
         OrderPayFragment.jumpIn((AppCompatActivity) getActivity());
     }
+
+
+
 }

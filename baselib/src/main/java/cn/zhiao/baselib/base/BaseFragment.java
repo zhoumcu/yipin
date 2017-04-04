@@ -173,4 +173,20 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
             activity.gt(bundle, cl);
         }
     }
+    /**
+     * 是否显示TollBar
+     *
+     * @param show
+     */
+    public void setShowToolbar(boolean show) {
+        if (show) {
+            if(getBaseActivity().toolbar!=null){
+                getBaseActivity().toolbar.setVisibility(View.VISIBLE);
+            }
+        } else {
+            if(getBaseActivity().toolbar!=null){
+                getBaseActivity().toolbar.setVisibility(View.GONE);
+            }
+        }
+    }
 }

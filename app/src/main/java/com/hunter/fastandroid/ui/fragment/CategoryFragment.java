@@ -1,5 +1,6 @@
 package com.hunter.fastandroid.ui.fragment;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hunter.fastandroid.R;
+import com.hunter.fastandroid.ui.activity.ShoppingCacheActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -120,9 +122,9 @@ public class CategoryFragment extends BaseFragment implements ViewPager.OnPageCh
                 idVp.setCurrentItem(1);
                 break;
             case R.id.iv_search://跳转到搜索页面
-//                Intent intent = new Intent(getContext(), ShoppingCacheActivity.class);
-//                intent.putExtra("type", "7");
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), ShoppingCacheActivity.class);
+                intent.putExtra("type", "7");
+                startActivity(intent);
                 break;
         }
     }

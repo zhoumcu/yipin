@@ -1,5 +1,6 @@
 package com.hunter.fastandroid.ui.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -103,12 +104,12 @@ public class BrandViewPagerFragment extends BaseFragment implements BrandView{
             @Override
             public void onItemClick(ViewGroup parent, View view, GoodsBrand goodsBrand, int position) {
                 logI("当前点击--------------->"+goodsBrand.getName()+"item--------->"+sectionAdapter.getItemCount());
-//                Intent intent1 = new Intent(getContext(), ShoppingCacheActivity.class);
-//                intent1.putExtra("type", "9");
+                Intent intent1 = new Intent(getContext(), ShoppingCacheActivity.class);
+                intent1.putExtra("type", "9");
 //                intent1.putExtra("space_id", goodsBrand.getBrand_id());
 //                intent1.putExtra("name", goodsBrand.getName());
-//                startActivity(intent1);
-                gt(ShoppingCacheActivity.class);
+                startActivity(intent1);
+//                gt(ShoppingCacheActivity.class);
 
             }
 

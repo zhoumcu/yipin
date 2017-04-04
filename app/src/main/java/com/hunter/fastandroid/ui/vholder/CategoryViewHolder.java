@@ -1,6 +1,7 @@
 package com.hunter.fastandroid.ui.vholder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hunter.fastandroid.R;
 import com.hunter.fastandroid.dao.Category;
+import com.hunter.fastandroid.ui.activity.ShoppingCacheActivity;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
 import java.util.ArrayList;
@@ -142,11 +144,11 @@ public class CategoryViewHolder extends BaseViewHolder<Category> {
             TextView tempTv = (TextView) v;
             String tag = (String) tempTv.getTag();
 //            Shareutl.shortToast("您点击的分类:"+tempTv.getText().toString()+"cid"+tag);
-//            Intent intent1 = new Intent(context, ShoppingCacheActivity.class);
-//            intent1.putExtra("type", "8");
+            Intent intent1 = new Intent(context, ShoppingCacheActivity.class);
+            intent1.putExtra("type", "8");
 //            intent1.putExtra("space_id", tag+"");
 //            intent1.putExtra("name", tempTv.getText().toString());
-//            context.startActivity(intent1);
+            context.startActivity(intent1);
         }
     };
     /**

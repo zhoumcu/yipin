@@ -2,12 +2,12 @@ package cn.zhiao.baselib.base;
 
 import android.text.TextUtils;
 
-import cn.zhiao.baselib.utils.CommonUtils;
-
 import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import cn.zhiao.baselib.utils.CommonUtil;
 
 /**
  * 公共请求
@@ -19,7 +19,7 @@ public class BaseRequest {
      * @return
      */
     public String getJsonParams() {
-        String jsonStr = CommonUtils.getGson().toJson(this);
+        String jsonStr = CommonUtil.getGson().toJson(this);
         if (TextUtils.isEmpty(jsonStr)) {
             jsonStr = "";
         }

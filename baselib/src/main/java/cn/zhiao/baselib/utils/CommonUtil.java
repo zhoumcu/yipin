@@ -7,18 +7,31 @@ package cn.zhiao.baselib.utils;
  */
 
 import android.app.Activity;
+import android.app.Service;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.graphics.Point;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Environment;
+import android.os.Vibrator;
 import android.os.storage.StorageManager;
+import android.provider.ContactsContract;
+import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import cn.zhiao.baselib.custom.dialog.CommonDialog;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -28,21 +41,34 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.math.BigDecimal;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Enumeration;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import cn.zhiao.baselib.R;
+import cn.zhiao.baselib.app.BaseApplication;
 
 
 public class CommonUtil {
 
-
+    private static Gson mGson;
+    private static final String GSON_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    public static SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+    public static SimpleDateFormat formatDay = new SimpleDateFormat("d", Locale.getDefault());
+    public static SimpleDateFormat formatMonthDay = new SimpleDateFormat("M-d", Locale.getDefault());
+    public static SimpleDateFormat formatDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     public static final String LOCATION_ADDRESS="";
     public static  final String PRO_SHI="shiming";
     public static  final String PRO_SHENGFENG="shengfeng";
@@ -398,57 +424,331 @@ public class CommonUtil {
         String[] s = datetime.split("-");
         return  s[0]+"年"+s[1]+"月"+s[2]+"日";
     }
-
     /**
+     * 验证json合法性
      *
-     * 等额本息还款【利息多】
-     * @param totalMoney 贷款总额
-     * @param monRate  贷款商业利率
-     * @param month  贷款年限
-     */
-    public static double getInterest(double totalMoney,double monRate,int month){
-
-        double monInterest=totalMoney*monRate*Math.pow((1+monRate),month)/(Math.pow((1+monRate),month)-1);
-        BigDecimal b   =   new   BigDecimal(monInterest);
-        monInterest   =   b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
-        System.out.println("月供本息和："+monInterest);
-        return monInterest;
-
-    }
-
-
-    /**
-     *判断是否登录
+     * @param jsonContent
      * @return
      */
-    public static boolean getLoginState(Context context) {
-        //String token = SharedPreferences.getString(context, "token");
-        String token = "token";
-        if (CommonUtil.isExistValue(token)) {
+    public static boolean isJsonFormat(String jsonContent) {
+        try {
+            new JsonParser().parse(jsonContent);
             return true;
+        } catch (JsonParseException e) {
+            return false;
         }
-        return false;
     }
 
     /**
-     * 跳转到登录界面
+     * 格式化日期
+     *
+     * @param date
+     * @return 年月日
      */
-    public static void gotoLogin(final Context context) {
-        CommonDialog dialog = new CommonDialog(context, "提示");
-        dialog.show();
-        dialog.setmessage("您还末登录，去登录？");
-        dialog.setOkListener(new CommonDialog.OKListener() {
-            @Override
-            public void positiveAction() {//确定
-//                Intent intent = new Intent(context, LoginActivity.class);
-//                intent.putExtra("isOtherFrom",true);
-//                context.startActivity(intent);
-            }
-            @Override
-            public void negativeAction() {
+    public static String formatDate(Date date) {
+        return formatDate.format(date);
+    }
 
+    /**
+     * 格式化日期
+     *
+     * @param date
+     * @return 年月日 时分秒
+     */
+    public static String formatDateTime(Date date) {
+        return formatDateTime.format(date);
+    }
+
+    /**
+     * 将时间戳解析成日期
+     *
+     * @param timeInMillis
+     * @return 年月日
+     */
+    public static String parseDate(long timeInMillis) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(timeInMillis);
+        Date date = calendar.getTime();
+        return formatDate(date);
+    }
+
+    /**
+     * 将时间戳解析成日期
+     *
+     * @param timeInMillis
+     * @return 年月日 时分秒
+     */
+    public static String parseDateTime(long timeInMillis) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(timeInMillis);
+        Date date = calendar.getTime();
+        return formatDateTime(date);
+    }
+
+    /**
+     * 解析日期
+     *
+     * @param date
+     * @return
+     */
+    public static Date parseDate(String date) {
+        Date mDate = null;
+        try {
+            mDate = formatDate.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return mDate;
+    }
+
+    /**
+     * 解析日期
+     *
+     * @param datetime
+     * @return
+     */
+    public static Date parseDateTime(String datetime) {
+        Date mDate = null;
+        try {
+            mDate = formatDateTime.parse(datetime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return mDate;
+    }
+
+    /**
+     * 对指定字符串进行md5加密
+     *
+     * @param s
+     * @return 加密后的数据
+     */
+    public static String EncryptMD5(String s) {
+        char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                'a', 'b', 'c', 'd', 'e', 'f'};
+        try {
+            byte[] btInput = s.getBytes();
+            // 获得MD5摘要算法的 MessageDigest 对象
+            MessageDigest mdInst = MessageDigest.getInstance("MD5");
+            // 使用指定的字节更新摘要
+            mdInst.update(btInput);
+            // 获得密文
+            byte[] md = mdInst.digest();
+            // 把密文转换成十六进制的字符串形式
+            int j = md.length;
+            char str[] = new char[j * 2];
+            int k = 0;
+            for (int i = 0; i < j; i++) {
+                byte byte0 = md[i];
+                str[k++] = hexDigits[byte0 >>> 4 & 0xf];
+                str[k++] = hexDigits[byte0 & 0xf];
+            }
+            return new String(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 判断email格式是否正确
+     *
+     * @param email
+     * @return
+     */
+    public static boolean isEmail(String email) {
+        String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
+        Pattern p = Pattern.compile(str);
+        Matcher m = p.matcher(email);
+        return m.matches();
+    }
+
+    /**
+     * 根据系统语言判断是否为中国
+     *
+     * @return
+     */
+    public static boolean isZh() {
+        Locale locale = BaseApplication.getInstance().getResources().getConfiguration().locale;
+        String language = locale.getLanguage();
+        if (language.startsWith("zh")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Try to return the absolute file path from the given Uri
+     *
+     * @param context
+     * @param uri
+     * @return the file path or null
+     */
+    public static String getRealFilePath(final Context context, final Uri uri) {
+        if (null == uri) return null;
+        final String scheme = uri.getScheme();
+        String data = null;
+        if (scheme == null)
+            data = uri.getPath();
+        else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
+            data = uri.getPath();
+        } else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
+            Cursor cursor = context.getContentResolver().query(uri, new String[]{MediaStore.Images.ImageColumns.DATA}, null, null, null);
+            if (null != cursor) {
+                if (cursor.moveToFirst()) {
+                    int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                    if (index > -1) {
+                        data = cursor.getString(index);
+                    }
+                }
+                cursor.close();
+            }
+        }
+        return data;
+    }
+
+    /**
+     * 获取gson对象
+     *
+     * @return
+     */
+    public static Gson getGson() {
+        if (mGson == null) {
+            mGson = new GsonBuilder().setDateFormat(GSON_FORMAT).create(); // 创建gson对象，并设置日期格式
+        }
+
+        return mGson;
+    }
+
+    /**
+     * 调用震动器
+     *
+     * @param context      调用该方法的Context
+     * @param milliseconds 震动的时长，单位是毫秒
+     */
+    public static void vibrate(final Context context, long milliseconds) {
+        Vibrator vib = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
+        vib.vibrate(milliseconds);
+    }
+
+    /**
+     * 调用震动器
+     *
+     * @param context  调用该方法的Context
+     * @param pattern  自定义震动模式 。数组中数字的含义依次是[静止时长，震动时长，静止时长，震动时长。。。]时长的单位是毫秒
+     * @param isRepeat 是否反复震动，如果是true，反复震动，如果是false，只震动一次
+     */
+    public static void vibrate(final Context context, long[] pattern, boolean isRepeat) {
+        Vibrator vib = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
+        vib.vibrate(pattern, isRepeat ? 1 : -1);
+    }
+
+    /**
+     * 播放音乐
+     *
+     * @param context
+     */
+    public static void playMusic(Context context) {
+        MediaPlayer mp = MediaPlayer.create(context, R.raw.beep);
+        mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.start();
+            }
+        });
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
             }
         });
     }
 
+    /**
+     * 获取联系人电话
+     *
+     * @param cursor
+     * @return
+     */
+    private String getContactPhone(Context context, Cursor cursor) {
+
+        int phoneColumn = cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER);
+        int phoneNum = cursor.getInt(phoneColumn);
+        String phoneResult = "";
+        //System.out.print(phoneNum);
+        if (phoneNum > 0) {
+            // 获得联系人的ID号
+            int idColumn = cursor.getColumnIndex(ContactsContract.Contacts._ID);
+            String contactId = cursor.getString(idColumn);
+            // 获得联系人的电话号码的cursor;
+            Cursor phones = context.getContentResolver().query(
+                    ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                    null,
+                    ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactId,
+                    null, null);
+            //int phoneCount = phones.getCount();
+            //allPhoneNum = new ArrayList<String>(phoneCount);
+            if (phones.moveToFirst()) {
+                // 遍历所有的电话号码
+                for (; !phones.isAfterLast(); phones.moveToNext()) {
+                    int index = phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+                    int typeindex = phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE);
+                    int phone_type = phones.getInt(typeindex);
+                    String phoneNumber = phones.getString(index);
+                    switch (phone_type) {
+                        case 2:
+                            phoneResult = phoneNumber;
+                            break;
+                    }
+                    //allPhoneNum.add(phoneNumber);
+                }
+                if (!phones.isClosed()) {
+                    phones.close();
+                }
+            }
+        }
+        return phoneResult;
+    }
+
+    /**
+     * 格式化价格
+     *
+     * @param price
+     * @return .**
+     */
+    public static String formatPriceNumber(float price) {
+        NumberFormat nf = new DecimalFormat("0.00");
+        return nf.format(price);
+    }
+
+    /**
+     * 获取屏幕宽度和高度，单位为px
+     *
+     * @param context
+     * @return
+     */
+    public static Point getScreenMetrics (Context context) {
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        int w_screen = dm.widthPixels;
+        int h_screen = dm.heightPixels;
+        L.d("手机屏幕", "Screen---Width = " + w_screen + " Height = " + h_screen + " densityDpi = " + dm.densityDpi + " density = " + dm.density);
+        return new Point(w_screen, h_screen);
+    }
+
+    /**
+     * 将xml中的dip转换成px
+     *
+     * @param context
+     * @param dipValue
+     * @return
+     */
+    public static int xmldip2px (Context context, int dipValue) {
+        Resources resources = context.getResources();
+        int result = resources.getDimensionPixelSize(dipValue);
+        return result;
+    }
 }

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.hunter.fastandroid.R;
 import com.hunter.fastandroid.ui.fragment.AddressManagerFragment;
+import com.hunter.fastandroid.ui.fragment.CategoryProductFragment;
 import com.hunter.fastandroid.ui.fragment.GoodsDetailFragment;
 import com.hunter.fastandroid.ui.fragment.OrderFragment;
 import com.hunter.fastandroid.ui.fragment.SearchGoodsFragment;
@@ -29,7 +30,7 @@ import cn.zhiao.baselib.base.BaseActivity;
 public class ShoppingCacheActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
-    Toolbar toolbar;
+    public Toolbar toolbar;
     @Bind(R.id.container)
     FrameLayout container;
     @Bind(R.id.iv_category_bootom)
@@ -48,9 +49,11 @@ public class ShoppingCacheActivity extends BaseActivity {
     RelativeLayout rlBottom;
     @Bind(R.id.ll_content)
     LinearLayout llContent;
-    private String type = "10";//1为进来时为商品详情，2为立即购买，3为订单，4为地址管理，5为邀请好友
+    private String type = "9";//1为进来时为商品详情，2为立即购买，3为订单，4为地址管理，5为邀请好友
     private TextView mTvTitle;
     private String product_id;
+    private String space_id;
+    private String name;
 
     public static ShoppingCacheActivity getInstance() {
         return instance;
@@ -61,6 +64,9 @@ public class ShoppingCacheActivity extends BaseActivity {
     @Override
     public void initView() {
         instance = this;
+        type = getIntent().getStringExtra("type");
+        setToolbar(toolbar);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
         addViewToToolBar();
         //确定显示哪个Fragment
@@ -110,10 +116,10 @@ public class ShoppingCacheActivity extends BaseActivity {
                 SearchGoodsFragment.jumpIn(this);
                 break;
             case "8"://分类--根据分类筛选出来的产品
-                //CategoryProductFragment.jumpIn(this, space_id, name);
+                CategoryProductFragment.jumpIn(this, space_id, name);
                 break;
             case "9"://品牌--根据品牌筛选出来的产品
-                //CategoryProductFragment.jumpIn(this, name, "", space_id);//这里为品牌id
+                CategoryProductFragment.jumpIn(this, name, "", space_id);//这里为品牌id
                 break;
             case "10"://购物车
                 ShoppingCartFragment.jumpIn(this);

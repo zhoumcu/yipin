@@ -1,13 +1,14 @@
 package cn.zhiao.baselib.base;
 
-import java.lang.reflect.Type;
-
-import org.json.JSONObject;
-
 import android.text.TextUtils;
 
 import com.google.gson.JsonSyntaxException;
-import cn.zhiao.baselib.utils.CommonUtils;
+
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
+
+import cn.zhiao.baselib.utils.CommonUtil;
 
 public class JsonResponse extends BaseResponse {
 
@@ -72,7 +73,7 @@ public class JsonResponse extends BaseResponse {
             throw new IllegalArgumentException(
                     "In the JsonResponse, data can't be empty");
 
-        T object = CommonUtils.getGson().fromJson(getData(), clazz);
+        T object = CommonUtil.getGson().fromJson(getData(), clazz);
 
         return object;
     }
@@ -83,7 +84,7 @@ public class JsonResponse extends BaseResponse {
             throw new IllegalArgumentException(
                     "In the JsonResponse, data can't be empty");
 
-        T object = CommonUtils.getGson().fromJson(getData(), typeOfT);
+        T object = CommonUtil.getGson().fromJson(getData(), typeOfT);
 
         return object;
     }

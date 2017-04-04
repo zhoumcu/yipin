@@ -18,6 +18,11 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.hunter.fastandroid.R;
+import com.hunter.fastandroid.dao.GoodDetail;
+import com.hunter.fastandroid.dao.ShoppingCartGoods;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,6 +35,7 @@ import butterknife.OnClick;
 public class GoodsDetailDialogFragment extends DialogFragment {
 
     private static final String TAG = GoodsDetailDialogFragment.class.getSimpleName();
+    private List<ShoppingCartGoods> list = new ArrayList<>();
 
     private static GoodsDetailDialogFragment getInstance() {
         GoodsDetailDialogFragment goodsDetailDialogFragment = new GoodsDetailDialogFragment();
@@ -38,7 +44,7 @@ public class GoodsDetailDialogFragment extends DialogFragment {
         return goodsDetailDialogFragment;
     }
 
-    public static void showDialog(AppCompatActivity activity, OnResponseListenter listenter) {
+    public static void showDialog(AppCompatActivity activity, GoodDetail mGoodDetail, OnResponseListenter listenter) {
 
         FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
         Fragment fragment = activity.getSupportFragmentManager().findFragmentByTag(TAG);
@@ -139,7 +145,7 @@ public class GoodsDetailDialogFragment extends DialogFragment {
     @OnClick(R.id.tv_ok)
     public void onClick() {
         this.dismiss();
-        OrderConfirmationFragment.jumpIn((AppCompatActivity) getActivity());
+        OrderConfirmationFragment.jumpIn((AppCompatActivity) getActivity(), list);
     }
 
     public interface OnResponseListenter {
