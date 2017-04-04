@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginBottom="@dimen/common_padding1"
+    android:paddingLeft="@dimen/common_padding5"
+    android:paddingRight="@dimen/common_padding5"
+    android:orientation="horizontal"
+    style="@style/ll_backgroud_white">
+
+    <CheckBox
+        android:id="@+id/ck_choose_shopping_cart"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:button="@null"
+        android:background="@drawable/check_checked"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation = "vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:id="@+id/iv_goods_picture_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/rectangle45_white"
+                android:scaleType="centerCrop"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_goods_name_shopping_cart"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:paddingBottom="@dimen/common_padding5"
+                        style="@style/tv_black_13"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_edit_goods_shopping_cart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_goods_edit"
+                        android:paddingLeft="@dimen/common_padding5"
+                        android:paddingRight="@dimen/common_padding5"
+                        android:paddingTop="@dimen/common_padding2"
+                        android:paddingBottom="@dimen/common_padding2"
+                        android:clickable="true"
+                        android:gravity="center"
+                        style="@style/tv_red_15"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goods_info_shopping_cart"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_goods_info_shopping_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxLines="4"
+                        style="@style/tv_black_13"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_goods_price_shopping_cart"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="￥226.00"
+                            style="@style/tv_red_15"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_goods_number_shopping_cart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="X1"
+                            style="@style/tv_black_15"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_edit_shopping_cart"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_height="match_parent">
+
+                    <include layout="@layout/shopping_cart_edit"/>
+                    <TextView
+                        android:id="@+id/tv_remove_goods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="删除"
+                        android:layout_marginTop="@dimen/common_padding5"
+                        android:clickable="true"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="@dimen/common_padding15"
+                        android:paddingRight="@dimen/common_padding15"
+                        android:background="@drawable/rectangle_radius_purplish_blue_20_pressed"
+                        style="@style/tv_white_15"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:id="@+id/tv_shoufu_monthpay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/tv_common_size11"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="@dimen/common_padding10"
+        android:id="@+id/tv_delete_hostory_search_data"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="@dimen/common_padding5"
+        android:drawableLeft="@drawable/laji"
+        android:text="清空历史数据"
+        style="@style/tv_gray_13"/>
+
+</LinearLayout>
